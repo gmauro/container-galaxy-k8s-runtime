@@ -297,7 +297,6 @@
 
   <label id="phenomenal-flux" text="Fluxomics Tools" />    
   <section name="Fluxomics" id="pheno-fluxomics">
-    <tool file="phenomenal/fluxomics/ramid/ramid.xml" labels="UBarcelona"/>
     <tool file="phenomenal/fluxomics/midcor/midcor.xml" labels="UBarcelona"/>
     <tool file="phenomenal/fluxomics/iso2flux/iso2flux.xml" labels="UBarcelona"/>
     <tool file="phenomenal/fluxomics/isodyn/isodyn.xml" labels="UBarcelona"/>
