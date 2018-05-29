@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER PhenoMeNal-H2020 Project <phenomenal-h2020-users@googlegroups.com>
 
 LABEL Description="Galaxy 17.05-phenomenal for running inside Kubernetes."
@@ -8,15 +8,19 @@ LABEL version="1.2"
 
 RUN apt-get -qq update && apt-get install --no-install-recommends -y apt-transport-https software-properties-common wget && \
     apt-get update -qq && \
-    apt-get install --no-install-recommends -y mercurial python-psycopg2 sudo python-virtualenv \
+    apt-get install --no-install-recommends -y mercurial python-psycopg2 sudo virtualenv \
     libyaml-dev libffi-dev libssl-dev \
-    curl git python-pip python-gnuplot python-psutil && \
+    curl git python-pip python-gnuplot python-psutil apt-utils bzip2 && \
     pip install --upgrade pip && \
     apt-get purge -y software-properties-common && \
     apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN git clone --depth 1 --single-branch --branch release_17.05_plus_k8s_fs_support https://github.com/phnmnl/galaxy.git
 WORKDIR galaxy
-RUN echo "pykube==0.15.0" >> requirements.txt
+COPY config/requirements.txt requirements.txt
+RUN echo "pykube==0.15.0" >> requirements.txt \
+    && cp requirements.txt requirements.txt.original \
+    && sed s/requests==2.8.1/requests==2.18.4/ requirements.txt.original > requirements.txt \
+    && rm requirements.txt.original
 COPY config/galaxy.ini config/galaxy.ini
 COPY config/job_conf.xml config/job_conf.xml
 COPY config/tool_conf.xml config/tool_conf.xml
