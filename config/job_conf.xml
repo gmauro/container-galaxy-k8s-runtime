@@ -31,6 +31,22 @@
         <param id="max_pod_retrials">3</param>
         <param id="docker_enabled">true</param>
     </destination>
+    <destination id="fastqc-container" runner="k8s">
+        <param id="docker_repo_override">docker.io</param>
+        <param id="docker_owner_override">biocontainers</param>
+        <param id="docker_image_override">fastqc</param>
+        <param id="docker_tag_override">v0.11.5</param>
+        <param id="max_pod_retrials">3</param>
+        <param id="docker_enabled">true</param>
+    </destination>
+    <destination id="bwa-container" runner="k8s">
+        <param id="docker_repo_override">docker.io</param>
+        <param id="docker_owner_override">biocontainers</param>
+        <param id="docker_image_override">bwa</param>
+        <param id="docker_tag_override">0.7.15</param>
+        <param id="max_pod_retrials">3</param>
+        <param id="docker_enabled">true</param>
+    </destination>
 	<destination id="batman-container" runner="k8s">
             <param id="docker_repo_override">container-registry.phenomenal-h2020.eu</param>
             <param id="docker_owner_override">phnmnl</param>
@@ -338,6 +354,9 @@
              chosen at random.
          -->
         <tool id="toolshed.g2.bx.psu.edu/repos/devteam/samtools_stats/samtools_stats/2.0.1" destination="samtools-container"/>
+        <tool id="toolshed.g2.bx.psu.edu/repos/devteam/samtools_idxstats/samtools_idxstats/2.0.1" destination="samtools-container"/>
+        <tool id="toolshed.g2.bx.psu.edu/repos/crs4/bwa_mem/bwa_mem/0.8.0" destination="bwa-container"/>
+        <tool id="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.71" destination="fastqc-container"/>
         <tool id="BatchFeatureRemoval" destination="batchfeature-container"/>
         <tool id="upps_blankfilter" destination="blankfilter-container"/>
         <tool id="log2transformation" destination="log2transformation-container"/>
