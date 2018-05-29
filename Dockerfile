@@ -10,7 +10,7 @@ RUN apt-get -qq update && apt-get install --no-install-recommends -y apt-transpo
     apt-get update -qq && \
     apt-get install --no-install-recommends -y mercurial python-psycopg2 sudo virtualenv \
     libyaml-dev libffi-dev libssl-dev \
-    curl git python-pip python-gnuplot python-psutil apt-utils bzip2 && \
+    curl git python-pip python-gnuplot python-psutil apt-utils bzip2 \
     samtools && \
     pip install --upgrade pip && \
     apt-get purge -y software-properties-common && \
