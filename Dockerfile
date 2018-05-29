@@ -16,7 +16,6 @@ RUN apt-get -qq update && apt-get install --no-install-recommends -y apt-transpo
     apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN git clone --depth 1 --single-branch --branch release_17.05_plus_k8s_fs_support https://github.com/phnmnl/galaxy.git
 WORKDIR galaxy
-COPY config/requirements.txt requirements.txt
 RUN echo "pykube==0.15.0" >> requirements.txt \
     && cp requirements.txt requirements.txt.original \
     && sed s/requests==2.8.1/requests==2.18.4/ requirements.txt.original > requirements.txt \
