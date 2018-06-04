@@ -25,9 +25,9 @@
         <destination id="local" runner="local"/>
     <destination id="samtools-container" runner="k8s">
         <param id="docker_repo_override">docker.io</param>
-        <param id="docker_owner_override">biocontainers</param>
+        <param id="docker_owner_override">gmauro</param>
         <param id="docker_image_override">samtools</param>
-        <param id="docker_tag_override">1.3.1</param>
+        <param id="docker_tag_override">latest</param>
         <param id="max_pod_retrials">3</param>
         <param id="docker_enabled">true</param>
     </destination>
