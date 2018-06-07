@@ -15,6 +15,12 @@ RUN apt-get -qq update && apt-get install --no-install-recommends -y apt-transpo
     pip install --upgrade pip && \
     apt-get purge -y software-properties-common && \
     apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Add user biodocker with password biodocker
+RUN groupadd fuse && \
+    useradd --create-home --shell /bin/bash --user-group --uid 1000 --groups sudo,fuse biodocker && \
+    echo `echo "biodocker\nbiodocker\n" | passwd biodocker`
+
 RUN git clone --depth 1 --single-branch --branch release_17.05_plus_k8s_fs_support https://github.com/phnmnl/galaxy.git
 WORKDIR galaxy
 RUN echo "pykube==0.15.0" >> requirements.txt \
