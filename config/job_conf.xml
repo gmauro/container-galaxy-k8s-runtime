@@ -48,7 +48,7 @@
             <param id="docker_enabled">true</param>
         </destination>
         <destination id="bcftools_mpileup-container" runner="k8s">
-            <param id="docker_repo_override">quay.io.io</param>
+            <param id="docker_repo_override">quay.io</param>
             <param id="docker_owner_override">biocontainers</param>
             <param id="docker_image_override">mulled-v2-f7a49c68bd00a9e0147f58c2f0ef0a7bd67e944b</param>
             <param id="docker_tag_override">d0f010e6a2bfb7d4ae09a5c6bd18d00dde8096be-0</param>
@@ -56,7 +56,7 @@
             <param id="docker_enabled">true</param>
         </destination>
         <destination id="bcftools_call-container" runner="k8s">
-            <param id="docker_repo_override">quay.io.io</param>
+            <param id="docker_repo_override">quay.io</param>
             <param id="docker_owner_override">biocontainers</param>
             <param id="docker_image_override">mulled-v2-b99184dc2d32592dd62a87fa4a796c61585788e6</param>
             <param id="docker_tag_override">bf73fba94d5c6dd3c381db3afaba80376aeb5289-0</param>
