@@ -63,7 +63,14 @@
             <param id="max_pod_retrials">3</param>
             <param id="docker_enabled">true</param>
         </destination>
-
+        <destination id="multiqc-container" runner="k8s">
+            <param id="docker_repo_override">quay.io</param>
+            <param id="docker_owner_override">biocontainers</param>
+            <param id="docker_image_override">multiqc</param>
+            <param id="docker_tag_override">1.5</param>
+            <param id="max_pod_retrials">3</param>
+            <param id="docker_enabled">true</param>
+        </destination>
 
     </destinations>
     <tools>
@@ -77,6 +84,7 @@
         <tool id="toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0.1" destination="samtools-container"/>
 
         <tool id="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72" destination="fastqc-container"/>
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.5.0" destination="multiqc-container"/>
 
         <tool id="toolshed.g2.bx.psu.edu/repos/crs4/bwa_mem/bwa_mem/0.8.0" destination="bwa-container"/>
         <tool id="toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.1" destination="bwa-container"/>
