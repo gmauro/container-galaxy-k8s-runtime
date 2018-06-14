@@ -82,8 +82,8 @@
         <tool id="toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.1" destination="bwa-container"/>
         <tool id="toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa/0.7.17.4" destination="bwa-container"/>
 
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/bcftools_call/bcftools_call/1.4.0" destination="bcftools_mpileup-container"/>
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/bcftools_mpileup/bcftools_mpileup/1.4.0.0" destination="bcftools_call-container"/>
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/bcftools_call/bcftools_call/1.4.0" destination="bcftools_call-container"/>
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/bcftools_mpileup/bcftools_mpileup/1.4.0.0" destination="bcftools_mpileup-container"/>
 
     </tools>
 </job_conf>
